@@ -3,10 +3,18 @@ const api = {
         base: "https://api.openweathermap.org/data/2.5/"
 }
 
+function firstCall() {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric&APPID=5af31780c6a157f2580834cf5b6820b6`)
+                .then(weather => {
+                        return weather.json();
+                }).then(displayResults);
+}
+
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(e) {
+        firstCall();
         if (e.keyCode == 13) {
                 getResults(searchbox.value);
         }
@@ -20,7 +28,6 @@ function getResults(Query) {
 }
 
 function displayResults(weather) {
-        console.log(weather);
 
         let city = document.querySelector('.location .city');
         city.innerText = `${weather.name}, ${weather.sys.country}`;
@@ -50,7 +57,7 @@ function displayResults(weather) {
         let prss = document.querySelector('.pres');
         let hmd = document.querySelector('.humid');
 
-        prss.innerHTML = `${weather.main.pressure/1000} atm`;
+        prss.innerHTML = `${weather.main.pressure / 1000} atm`;
         hmd.innerHTML = `${weather.main.humidity} %`
 
         let ws = document.querySelector('.ws');
@@ -60,11 +67,11 @@ function displayResults(weather) {
         wd.innerHTML = `${weather.wind.deg} deg`;
 }
 
-function timeMaker(t){
-        let date = new Date(t*1000);
+function timeMaker(t) {
+        let date = new Date(t * 1000);
         let data = date.toGMTString();
-        let hr = data[17]+data[18];
-        let mn = data[20]+data[21];
+        let hr = data[17] + data[18];
+        let mn = data[20] + data[21];
         let time = `${hr}:${mn} GMT`;
         return time;
 
