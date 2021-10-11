@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather</title>
+        <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+        <div class="app-wrap">
+                <header>
+                        <input type="text" name="" id="" autocomplete="off" class="search-box"
+                                placeholder="Enter location">
+                </header>
+                <main>
+                        <section class="location">
+                                <div class="city">New Delhi, IN</div>
+                                <div class="date">Monday, 11 October 2021</div>
+                        </section>
+                        <div class="info-grid">
+                                <div class="item item-1">
+                                        <h3>Min.</h3>
+                                        <p class="min">32.5 / 86.9</p>
+                                        <h3>Max.</h3>
+                                        <p class="max">27.5 / 82.6</p>
+                                        <p>&ThinSpace;</p>
+                                        <p id="unit">&deg;C / F</p>
+                                </div>
+                                <div class="item-2">
+                                        <h1>Temperature</h1>
+                                        <div class="temp-val">
+                                                <h2 class="degC">28 &deg;C</h2>
+                                                <h2 class="degF">83 &deg;F</h2>
+                                                <h2 class="weth">Clear</h2>
+                                        </div>
+                                </div>
+                                <div class="item item-3">
+                                        <h3>Sunrise</h3>
+                                        <p class="sunrise">00:49 GMT</p>
+                                        <h3>Sunset</h3>
+                                        <p class="sunset">12:26 GMT</p>
+                                </div>
+                                <div class="item item-4">
+                                        <h3>Pressure</h3>
+                                        <p class="pres">1 atm</p>
+                                        <h3>Humidity</h3>
+                                        <p class="humid">29 %</p>
+                                </div>
+                                <div class="item item-5">
+                                        <h3>Wind</h3>
+                                        <img id="wind-dir" src="wind-arrows.png" alt="img">
+                                        <p class="ws">4 Km/h</p>
+                                        <p class="wd">0 deg</p>
+                                </div>
+                        </div>
+                </main>
+                <footer>
+                        <h4>Powered by <a href="https://openweathermap.org/">&ThickSpace;&ThickSpace;<img id="owmlogo"
+                                                src="openweathermap-logo1.png" alt="OpenWeatherMap"></a></h6>
+                </footer>
+        </div>
+
+        <script src="main.js"></script>
+</body>
+
+</html>
