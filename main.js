@@ -4,7 +4,7 @@ const api = {
 }
 
 function firstCall() {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric&APPID=5af31780c6a157f2580834cf5b6820b6`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=new+delhi&units=metric&APPID=5af31780c6a157f2580834cf5b6820b6`)
                 .then(weather => {
                         return weather.json();
                 }).then(displayResults);
@@ -63,7 +63,7 @@ function displayResults(weather) {
         let ws = document.querySelector('.ws');
         let wd = document.querySelector('.wd');
 
-        ws.innerHTML = `${weather.wind.speed} km/h`;
+        ws.innerHTML = `${weather.wind.speed} m/s`;
         wd.innerHTML = `${weather.wind.deg} deg`;
 }
 
